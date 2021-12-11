@@ -1,0 +1,36 @@
+.heading {
+    background-color: rgb(75, 69, 69);
+    width: 100%;
+    &-list {
+        display        : flex;
+        justify-content: space-between;
+        align-items    : center;
+        height         : 100px;
+        > h3 {
+            font-size: 40px;
+            color: white;
+            user-select: none;
+        }
+
+        .cart {
+            position: relative;
+
+            span {
+                position: absolute;
+                height: 30px;
+                width: 30px;
+                background-color: white;
+                top: -4px;
+                right: -6px;
+                border-radius: 50%;
+                text-align: center;
+                line-height: 30px;
+                font-size: 20px;
+            }
+        }
+
+        .cart:hover .cart-show__product{
+            transform: scale(1);
+        }
+    }
+}

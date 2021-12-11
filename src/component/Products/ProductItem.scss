@@ -1,0 +1,39 @@
+.product-item {
+    list-style     : none;
+    margin         : 10px;
+    padding        : 16px;
+    box-shadow     : 1px 1px 10px 0 #ddd;
+    display        : flex;
+    flex-direction : column;
+    justify-content: space-between;
+    text-decoration: none;
+    color: black;
+
+    h3 {
+        margin       : 10px 0;
+        white-space  : nowrap;
+        text-overflow: ellipsis;
+        overflow     : hidden;
+    }
+
+    &__image {
+        text-align: center;
+    }
+
+    &__image img {
+        width     : 35%;
+        height    : 100px;
+        object-fit: contain;
+    }
+
+    &__category {
+        display        : flex;
+        justify-content: space-between;
+        margin-top     : 10px;
+        align-items    : end;
+    }  
+}
+
+.product-item:hover {
+    transform: translateY(-2px);
+}
