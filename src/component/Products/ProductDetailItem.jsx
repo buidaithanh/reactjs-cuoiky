@@ -4,8 +4,12 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addProductToCart } from "../../store/product-slice";
 import { Back } from "iconsax-react";
+import { useState } from "react";
+import Modal from "../../UI/Modal";
 const ProductDetailItem = (props) => {
   const { title, price, category, image, description, id } = props;
+  const [isModal,setIsModal] = useState(false);
+  console.log('run')
   const dispatch = useDispatch();
   const addToCartHandler = () => {
     dispatch(
@@ -19,9 +23,16 @@ const ProductDetailItem = (props) => {
         amount: 1,
       })
     );
+    setIsModal(true);
+    setTimeout(() => {
+      setIsModal(false);
+      console.log('setTimeout')
+    },1500)
+    console.log('run before')
   };
   return (
       <Container>
+        {isModal && <Modal />}
         <Link to={"/products"} className="back">
           <Back size="32" color="#FF8A65"/>
         </Link>

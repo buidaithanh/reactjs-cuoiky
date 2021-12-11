@@ -1,11 +1,16 @@
-import './Modal.scss';
+import ReactDOM from "react-dom";
+
+import ModalOverlay from "./ModalOverlay";
 
 const Modal = () => {
-    return (
-        <>
-        
-        </>
-    )
-}
+  return (
+    <>
+      {ReactDOM.createPortal(
+        <ModalOverlay />,
+        document.getElementById("overlays")
+      )}
+    </>
+  );
+};
 
 export default Modal;
