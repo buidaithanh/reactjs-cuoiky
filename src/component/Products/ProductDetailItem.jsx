@@ -8,8 +8,8 @@ import { useState } from "react";
 import Modal from "../../UI/Modal";
 const ProductDetailItem = (props) => {
   const { title, price, category, image, description, id } = props;
-  const [isModal,setIsModal] = useState(false);
-  console.log('run')
+  const [isModal, setIsModal] = useState(false);
+  console.log("run");
   const dispatch = useDispatch();
   const addToCartHandler = () => {
     dispatch(
@@ -26,35 +26,33 @@ const ProductDetailItem = (props) => {
     setIsModal(true);
     setTimeout(() => {
       setIsModal(false);
-      console.log('setTimeout')
-    },1500)
-    console.log('run before')
+    }, 1500);
   };
   return (
-      <Container>
-        {isModal && <Modal />}
-        <Link to={"/products"} className="back">
-          <Back size="32" color="#FF8A65"/>
-        </Link>
-        <div className="product-detail__item">
-          <div className="product-detail__item__image">
-            <img src={image} alt={title} />
-          </div>
-          <div className="product-detail__item__content">
-            <h3 className="product-detail__item__content-title" >{title}</h3>
-            <h4 className="product-detail__item__content-price">
-              ${price.toFixed(2)}
-            </h4>
-            <span className="product-detail__item__content-category">
-              {category}
-            </span>
-            <p className="product-detail__item__content-description">
-              Note: {description}
-            </p>
-            <button onClick={addToCartHandler}>Add to Cart</button>
-          </div>
+    <Container>
+      {isModal && <Modal />}
+      <Link to={"/products"} className="back">
+        <Back size="32" color="#FF8A65" />
+      </Link>
+      <div className="product-detail__item">
+        <div className="product-detail__item__image">
+          <img src={image} alt={title} />
         </div>
-      </Container>
+        <div className="product-detail__item__content">
+          <h3 className="product-detail__item__content-title">{title}</h3>
+          <h4 className="product-detail__item__content-price">
+            ${price.toFixed(2)}
+          </h4>
+          <span className="product-detail__item__content-category">
+            {category}
+          </span>
+          <p className="product-detail__item__content-description">
+            Note: {description}
+          </p>
+          <button onClick={addToCartHandler}>Add to Cart</button>
+        </div>
+      </div>
+    </Container>
   );
 };
 

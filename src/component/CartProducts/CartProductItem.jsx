@@ -9,8 +9,6 @@ const CartProductItem = (props) => {
   const { title, price, image, id, amount } = props;
   const dispatch = useDispatch();
   const addToCarthandler = () => {
-    console.log(price, "price");
-    console.log("addtoCarthandler");
     dispatch(
       addProductToCart({
         id,
@@ -23,7 +21,6 @@ const CartProductItem = (props) => {
   };
   const removeProductFromCartHandler = () => {
     dispatch(removeProductFromCart(id));
-    console.log("remove");
   };
   return (
     <li className="cart-products__list__item">

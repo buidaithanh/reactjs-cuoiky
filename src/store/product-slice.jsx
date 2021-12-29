@@ -16,18 +16,14 @@ const productSlice = createSlice({
         (product) => product.id === newProduct.id
       );
       const existingItem = state.products[existingProductItemIndex];
-      console.log("existingProductItemIndex", existingProductItemIndex);
-      console.log("existingItem", existingItem);
       if (existingItem) {
         const updateItem = {
           ...existingItem,
           amount: existingItem.amount + newProduct.amount,
         };
-        console.log(existingItem.amount, "amount");
         state.products[existingProductItemIndex] = updateItem;
       } else {
         state.products = [...state.products, newProduct];
-        console.log(state.products, "state.products");
       }
     },
     removeProductFromCart(state, action) {
