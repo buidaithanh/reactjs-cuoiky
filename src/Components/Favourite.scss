@@ -1,0 +1,51 @@
+.favouriteFood {
+  .noFavouriteFood {
+    text-align: center;
+    h3 {
+      margin: 12px 0 18px;
+    }
+    a {
+      background: #f8901c;
+      color: white;
+      padding: 6px 15px;
+      font-size: 16px;
+      text-transform: uppercase;
+      border-radius: 4px;
+    }
+    img {
+      width: 50%;
+      margin-top: 25px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #d3d3d3;
+      padding: 20px;
+      background: #fbf8ee;
+    }
+  }
+  .favouriteItem {
+    width: 200px;
+    box-shadow: 0px 0px 20px #d2cfd5;
+    height: 150px;
+    margin: 10px 0;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    img {
+      width: 50px;
+    }
+    .deleteItem {
+      border: none;
+      outline: none;
+      padding: 4px 8px;
+      background: #f8901c;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      &:hover {
+        background: #ff8800;
+      }
+    }
+  }
+}
