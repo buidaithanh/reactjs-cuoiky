@@ -56,7 +56,7 @@ function ItemCard({ imgSrc, name, ratings, price, itemId }) {
             ))}
             <h3 className="price">
               <span>$ </span>
-              {parseInt(price).toFixed(2)}
+              {parseFloat(price).toFixed(2)}
             </h3>
           </div>
           <i className="addToCart" onClick={() => handleAddToCart()}>

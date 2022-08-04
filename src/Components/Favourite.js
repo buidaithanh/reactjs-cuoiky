@@ -7,40 +7,42 @@ import "./Favourite.scss";
 function Favourite() {
   const dispatch = useDispatch();
   const favouriteFood = useSelector((state) => state.cart.favouriteFood);
-  console.log(favouriteFood);
+  console.log(favouriteFood, "favouriteFood");
   return (
-    <div className="favouriteFood">
-      <main>
-        <div className="mainContainer">
-          <div className="dishItemContainer">
-            {favouriteFood && favouriteFood.length > 0 ? (
-              favouriteFood.map((item) => {
-                return (
-                  <div className="favouriteItem" key={item.id}>
-                    <h3> {item.name}</h3>
-                    <img src={item.imgSrc} alt={item.name} />
-                    <button
-                      className="deleteItem"
-                      onClick={() =>
-                        dispatch(removeFavouriteFoodFromCart({ id: item.id }))
-                      }
-                    >
-                      Delete
-                    </button>
-                  </div>
-                );
-              })
-            ) : (
-              <div className="noFavouriteFood">
-                <img src={nofavoritefood} alt="anh" />
-                <h3>No Favorite Food</h3>
-                <Link to={"/"}>Add some favorite foods</Link>
-              </div>
-            )}
+    <>
+      <div className="favouriteFood">
+        <main>
+          <div className="mainContainer">
+            <div className="dishItemContainer">
+              {favouriteFood && favouriteFood.length > 0 ? (
+                favouriteFood.map((item) => {
+                  return (
+                    <div className="favouriteItem" key={item.id}>
+                      <h3> {item.name}</h3>
+                      <img src={item.imgSrc} alt={item.name} />
+                      <button
+                        className="deleteItem"
+                        onClick={() =>
+                          dispatch(removeFavouriteFoodFromCart({ id: item.id }))
+                        }
+                      >
+                        Delete
+                      </button>
+                    </div>
+                  );
+                })
+              ) : (
+                <div className="noFavouriteFood">
+                  <img src={nofavoritefood} alt="anh" />
+                  <h3>No Favorite Food</h3>
+                  <Link to={"/"}>Add some favorite foods</Link>
+                </div>
+              )}
+            </div>
           </div>
-        </div>
-      </main>
-    </div>
+        </main>
+      </div>
+    </>
   );
 }
 

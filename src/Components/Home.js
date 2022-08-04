@@ -9,8 +9,9 @@ import BannerName from "./BannerName";
 import SubMenuContainer from "./SubMenuContainer";
 import DebitCard from "./DebitCard";
 
-function Home() {
+function Home({ newItems, text, emptyInput }) {
   const [isMainData, setMainData] = useState(Items);
+  const [notify, setNotify] = useState("");
   const products = useSelector((state) => state.cart.products);
   const totalPrice = useSelector((state) => state.cart.totalPrice);
   useEffect(() => {
@@ -40,9 +41,20 @@ function Home() {
       mainContainer.classList.toggle("active");
       rightMenu.classList.toggle("active");
     });
-  }, [isMainData]);
+  }, [isMainData, newItems]);
+  useEffect(() => {
+    if (newItems && newItems.length > 0) {
+      setMainData(newItems);
+    } else {
+      setMainData([]);
+      console.log("sai");
+      setNotify(text);
+    }
+  }, [newItems]);
   const setData = (itemId) => {
     setMainData(Items.filter((element) => element.itemId === itemId));
+    console.log("empty");
+    emptyInput("");
   };
   return (
     <main>
@@ -73,6 +85,7 @@ function Home() {
               ))}
           </div>
           <div className="dishItemContainer">
+            {isMainData.length <= 0 && <h3>Không có sản phẩm "{notify}"</h3>}
             {isMainData &&
               isMainData.length > 0 &&
               isMainData.map((item) => (

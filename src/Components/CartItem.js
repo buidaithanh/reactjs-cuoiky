@@ -40,7 +40,7 @@ function CartItem(props) {
       </div>
       <p className="itemPrice">
         <span className="dolorSign">$ </span>
-        <span className="itemPriceValue">{parseInt(price).toFixed(2)}</span>
+        <span className="itemPriceValue">{parseFloat(price).toFixed(2)}</span>
       </p>
     </div>
   );
