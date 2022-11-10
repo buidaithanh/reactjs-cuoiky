@@ -7,7 +7,6 @@ import "./Favourite.scss";
 function Favourite() {
   const dispatch = useDispatch();
   const favouriteFood = useSelector((state) => state.cart.favouriteFood);
-  console.log(favouriteFood, "favouriteFood");
   return (
     <>
       <div className="favouriteFood">

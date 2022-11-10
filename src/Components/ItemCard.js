@@ -1,6 +1,7 @@
 import { AddRounded, Favorite, StarRounded } from "@mui/icons-material";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import {Link} from 'react-dom';
 import { addProductToCart, addFavouriteFood } from "../store/cart-slice";
 function ItemCard({ imgSrc, name, ratings, price, itemId }) {
   const [isFavourite, setFavourite] = useState(false);
@@ -61,6 +62,11 @@ function ItemCard({ imgSrc, name, ratings, price, itemId }) {
           </div>
           <i className="addToCart" onClick={() => handleAddToCart()}>
             <AddRounded />
+          </i>
+          <i>
+            <Link to="/detail">
+                Detail
+            </Link>
           </i>
         </div>
       </div>
