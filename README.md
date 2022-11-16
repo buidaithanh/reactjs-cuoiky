@@ -6,4 +6,4 @@
 
 3 View -> Terminal -> npm install to install "node_modules"
 
-4 then npm start.
+4 then npm start..
