@@ -1,7 +1,7 @@
 import { AddRounded, Favorite, StarRounded } from "@mui/icons-material";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import {Link} from 'react-dom';
+import {Link} from 'react-router-dom';
 import { addProductToCart, addFavouriteFood } from "../store/cart-slice";
 function ItemCard({ imgSrc, name, ratings, price, itemId }) {
   const [isFavourite, setFavourite] = useState(false);
@@ -32,7 +32,9 @@ function ItemCard({ imgSrc, name, ratings, price, itemId }) {
     setFavourite(!isFavourite);
   };
   return (
+    
     <div className="itemCard" id={itemId}>
+     
       <div
         className={`isFavourite ${isFavourite ? "active" : ""} `}
         onClick={() => handleFavourite()}
@@ -40,7 +42,10 @@ function ItemCard({ imgSrc, name, ratings, price, itemId }) {
         <Favorite />
       </div>
       <div className="imgBox">
+        <Link to={`/detail/${itemId}`}>
         <img src={imgSrc} alt={name} className="itemImg" />
+
+        </Link>
       </div>
       <div className="itemContent">
         <h3 className="itemName">{name}</h3>
@@ -62,11 +67,6 @@ function ItemCard({ imgSrc, name, ratings, price, itemId }) {
           </div>
           <i className="addToCart" onClick={() => handleAddToCart()}>
             <AddRounded />
-          </i>
-          <i>
-            <Link to="/detail">
-                Detail
-            </Link>
           </i>
         </div>
       </div>

@@ -1,0 +1,134 @@
+.introduces {
+  width: 100%;
+  background-color: #fba84a;
+}
+
+.slide-bar {
+  position: relative;
+  width: 97%;
+  margin: 0 auto;
+  height: 800px;
+  background-image: linear-gradient(0, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://www.tastingtable.com/img/gallery/12-low-carb-fast-food-options-that-wont-ruin-your-diet/l-intro-1651501665.jpg");
+
+  .slide-bar-content {
+    position: absolute;
+    margin: 150px 0 0 150px;
+  }
+  .header1 {
+    font-size: 64px;
+    color: rgb(220, 93, 30);
+  }
+  .header2 {
+    font-size: 64px;
+    color: rgb(255, 255, 255);
+  }
+  .header3 {
+    display: inline-block;
+    margin-top: 40px;
+    color: rgb(138, 138, 138);
+  }
+
+  button {
+    margin-top: 30px;
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+    background-color: transparent;
+    border: 2px solid rgb(220, 93, 30);
+
+    &:hover {
+      background-color: rgb(220, 93, 30);
+      cursor: pointer;
+    }
+  }
+}
+
+.history-food {
+  display: flex;
+
+  .history-desc {
+    color: white;
+    margin: 100px;
+    text-align: center;
+
+    button {
+      margin-top: 30px;
+      padding: 10px;
+      font-size: 20px;
+      background-color: transparent;
+      border: 2px solid rgb(220, 93, 30);
+
+      &:hover {
+        background-color: rgb(220, 93, 30);
+        color: white;
+        cursor: pointer;
+      }
+    }
+    p {
+      margin-top: 80px;
+      line-height: 1.6;
+    }
+  }
+}
+
+.service-food{
+    height: 400px;
+    background-color: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+
+    
+}
+
+.service-item{
+    width: 20%;
+    height: 300px;
+    padding: 50px;
+    margin-top: 50px;
+
+    &:hover{
+        background-color: #ffffff;
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    }
+}
+.evaluate-client{
+text-align: center;
+background-color: #ececec;
+  padding: 60px;
+}
+
+.slider-item{
+  width: 500px;
+}
+
+.slider{
+  text-align: center;
+  background-color: #ececec;
+    .header-slider{
+      color: rgb(220, 93, 30);
+      margin: 20px 0;
+      
+    }
+    .client-say{
+      margin: 0 auto;
+      width: 600px;
+      line-height: 1.6;
+
+
+  }
+    .avt-client{
+      width: 200px;
+      height: 200px;
+      object-fit:cover;
+      border-radius: 800px;
+      margin: 20px auto;
+
+  }
+    .name-client{
+
+
+  }
+}

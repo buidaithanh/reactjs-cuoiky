@@ -1,13 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function BannerName({ name, discount, link }) {
   return (
     <div className="bannerContent">
       <h3>Hello {name}</h3>
       <p>
-        Get free discount for every <span>${discount}</span>
+      Introduction to fast food restaurant 
       </p>
-      <a href={link}>Learn More</a>
+      <Link to={link}>Learn More</Link>
     </div>
   );
 }
